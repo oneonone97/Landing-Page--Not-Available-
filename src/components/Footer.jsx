@@ -16,6 +16,7 @@ function Footer() {
             <h4 className="footer-heading">Legal</h4>
             <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
             <Link to="/terms-conditions" className="footer-link">Terms & Conditions</Link>
+            <Link to="/refund-policy" className="footer-link">Refund Policy</Link>
           </div>
         </div>
         <div className="footer-bottom">
