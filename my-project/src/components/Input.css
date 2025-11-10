@@ -1,0 +1,57 @@
+/* Input Component Styles */
+.input-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.input-label .required {
+  color: #e34444;
+  margin-left: 3px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #666666;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  transition: all 0.3s ease-out;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: #cacaca;
+}
+
+.input-field:focus {
+  border-color: #e34444;
+  box-shadow: 0 0 0 3px rgba(227, 68, 68, 0.1);
+}
+
+.input-field:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input-field.input-error {
+  border-color: #ff1616;
+}
+
+.error-message {
+  display: block;
+  font-size: 12px;
+  color: #ff1616;
+  margin-top: 5px;
+}

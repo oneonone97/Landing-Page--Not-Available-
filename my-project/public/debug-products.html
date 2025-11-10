@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Product Data</title>
+</head>
+<body>
+    <h1>Debug Product Data</h1>
+    <div id="debug-info"></div>
+    
+    <script>
+        async function debugProducts() {
+            const debugDiv = document.getElementById('debug-info');
+            
+            try {
+                // Test backend API directly
+                const response = await fetch('http://localhost:5000/api/products?limit=2');
+                const data = await response.json();
+                
+                debugDiv.innerHTML = `
+                    <h2>Backend API Response:</h2>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                    
+                    <h2>First Product Image URL:</h2>
+                    <p>${data.data?.[0]?.image_url || 'No image_url found'}</p>
+                    
+                    <h2>Test Image:</h2>
+                    <img src="${data.data?.[0]?.image_url || '/placeholder.jpg'}" 
+                         alt="Test Image" 
+                         style="width: 200px; border: 2px solid red;"
+                         onerror="this.style.border='2px solid red'; this.alt='FAILED TO LOAD'"
+                         onload="this.style.border='2px solid green'; this.alt='LOADED SUCCESSFULLY'">
+                `;
+                
+            } catch (error) {
+                debugDiv.innerHTML = `<h2>Error:</h2><pre>${error.message}</pre>`;
+            }
+        }
+        
+        debugProducts();
+    </script>
+</body>
+</html>

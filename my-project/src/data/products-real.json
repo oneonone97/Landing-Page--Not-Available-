@@ -1,0 +1,59 @@
+[
+  {
+    "id": "prod_001",
+    "name": "Premium Water Bottle - Silver",
+    "slug": "premium-water-bottle-silver",
+    "category": "Drinkware",
+    "description": "High-quality stainless steel water bottle with elegant silver finish",
+    "images": {
+      "main": "/products/WATER BOTTLE/water bottle silver.jpg",
+      "gallery": [
+        "/products/WATER BOTTLE/water bottle silver.jpg",
+        "/products/WATER BOTTLE/water bottle silver angle 1.jpg",
+        "/products/WATER BOTTLE/water bottle silver banner.jpg"
+      ]
+    },
+    "pricing": { "basePrice": 399, "finalPrice": 299, "discountPercentage": 25, "currency": "INR" },
+    "inventory": { "stock": 150, "inStock": true },
+    "reviews": { "average": 4.5, "count": 128 },
+    "metadata": { "isActive": true, "isFeatured": true, "isNew": true }
+  },
+  {
+    "id": "prod_002",
+    "name": "Brass Dhoop Dani - Black",
+    "slug": "brass-dhoop-dani-black",
+    "category": "Religious Items",
+    "description": "Traditional brass dhoop dani with elegant black finish for spiritual rituals",
+    "images": {
+      "main": "/products/DHOOP DANI/black dhoop dhani.jpg",
+      "gallery": [
+        "/products/DHOOP DANI/black dhoop dhani.jpg",
+        "/products/DHOOP DANI/black dhoop dani angle 1.jpg",
+        "/products/DHOOP DANI/black dhoop dani side view.jpg"
+      ]
+    },
+    "pricing": { "basePrice": 599, "finalPrice": 449, "discountPercentage": 25, "currency": "INR" },
+    "inventory": { "stock": 85, "inStock": true },
+    "reviews": { "average": 4.8, "count": 95 },
+    "metadata": { "isActive": true, "isFeatured": true, "isNew": false }
+  },
+  {
+    "id": "prod_003",
+    "name": "Waterproof Tote Bag - Orange",
+    "slug": "waterproof-tote-bag-orange",
+    "category": "Bags",
+    "description": "Large capacity waterproof tote bag in vibrant orange color",
+    "images": {
+      "main": "/products/WATERPROOF TOTE BAG/tote bag orange.jpg",
+      "gallery": [
+        "/products/WATERPROOF TOTE BAG/tote bag orange.jpg",
+        "/products/WATERPROOF TOTE BAG/tote bag orange banner.jpg",
+        "/products/WATERPROOF TOTE BAG/tote bag orange banner 2.jpg"
+      ]
+    },
+    "pricing": { "basePrice": 799, "finalPrice": 599, "discountPercentage": 25, "currency": "INR" },
+    "inventory": { "stock": 65, "inStock": true },
+    "reviews": { "average": 4.4, "count": 73 },
+    "metadata": { "isActive": true, "isFeatured": false, "isNew": true }
+  }
+]

@@ -1,0 +1,27 @@
+/* Admin Product Form Page Styles */
+.admin-product-form-page {
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-page-header {
+  margin-bottom: 2rem;
+}
+
+.form-page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.form-page-header p {
+  font-size: 16px;
+  color: #666666;
+  margin: 0;
+}
+
+.form-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666666;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+</head>
+<body>
+    <h1>Testing Product Images</h1>
+    
+    <h2>Water Bottle Images:</h2>
+    <img src="/products/WATER BOTTLE/water bottle silver.jpg" alt="Water Bottle Silver" style="width: 200px; margin: 10px;">
+    <img src="/products/WATER BOTTLE/water bottle black.jpg" alt="Water Bottle Black" style="width: 200px; margin: 10px;">
+    <img src="/products/WATER BOTTLE/water bottle red.jpg" alt="Water Bottle Red" style="width: 200px; margin: 10px;">
+    
+    <h2>Bamboo Hair Brush:</h2>
+    <img src="/products/BAMBOO HAIR BRUSH/bamboo hair brush new.jpg" alt="Bamboo Hair Brush" style="width: 200px; margin: 10px;">
+    
+    <h2>Gaming Mouse:</h2>
+    <img src="/products/GAMING MOUSE/Gaming mouse.jpg" alt="Gaming Mouse" style="width: 200px; margin: 10px;">
+    
+    <h2>Whisky Glass:</h2>
+    <img src="/products/WHISKY GLASS/whisky glass 320ml.jpg" alt="Whisky Glass" style="width: 200px; margin: 10px;">
+    
+    <h2>Tumbler:</h2>
+    <img src="/products/TUMBLER/tumbler.jpg" alt="Tumbler" style="width: 200px; margin: 10px;">
+    
+    <script>
+        // Check for image loading errors
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                console.error('Failed to load image:', this.src);
+                this.style.border = '2px solid red';
+                this.alt = 'FAILED: ' + this.alt;
+            };
+            img.onload = function() {
+                console.log('Successfully loaded image:', this.src);
+                this.style.border = '2px solid green';
+            };
+        });
+    </script>
+</body>
+</html>

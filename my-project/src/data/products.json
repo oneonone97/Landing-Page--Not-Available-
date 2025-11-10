@@ -1,0 +1,380 @@
+[
+  {
+    "id": "prod_001",
+    "name": "Premium Water Bottle",
+    "category": "Hydration",
+    "subcategory": "Water Bottles",
+    "description": "Durable and lightweight water bottle perfect for everyday use",
+    "shortDescription": "Premium quality water bottle - 1L capacity",
+    "images": {
+      "main": "/products/WATER BOTTLE/water bottle silver.jpg",
+      "thumbnail": "/products/WATER BOTTLE/water bottle silver.jpg",
+      "gallery": [
+        "/products/WATER BOTTLE/water bottle silver.jpg",
+        "/products/WATER BOTTLE/water bottle black.jpg",
+        "/products/WATER BOTTLE/water bottle red.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 299,
+      "discount": 50,
+      "discountPercentage": 17,
+      "finalPrice": 249,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 150,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.5,
+      "count": 128
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": true,
+      "isNew": true
+    }
+  },
+  {
+    "id": "prod_002",
+    "name": "Bamboo Hair Brush",
+    "slug": "bamboo-hair-brush",
+    "category": "Personal Care",
+    "subcategory": "Hair Brushes",
+    "description": "Eco-friendly bamboo hair brush with natural bristles",
+    "shortDescription": "Natural bamboo hair brush",
+    "images": {
+      "main": "/products/BAMBOO HAIR BRUSH/bamboo hair brush new.jpg",
+      "thumbnail": "/products/BAMBOO HAIR BRUSH/bamboo hair brush new.jpg",
+      "gallery": [
+        "/products/BAMBOO HAIR BRUSH/bamboo hair brush new.jpg",
+        "/products/BAMBOO HAIR BRUSH/bamboo brush banner 1.jpg",
+        "/products/BAMBOO HAIR BRUSH/bamboo brush front back.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 399,
+      "discount": 80,
+      "discountPercentage": 20,
+      "finalPrice": 319,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 85,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.7,
+      "count": 95
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": true,
+      "isNew": false
+    }
+  },
+  {
+    "id": "prod_003",
+    "name": "Whisky Glass Premium",
+    "slug": "whisky-glass-premium",
+    "category": "Kitchen & Dining",
+    "subcategory": "Drinking Glasses",
+    "description": "Premium crystal whisky glass - 320ml capacity",
+    "shortDescription": "Elegant crystal glass for whisky",
+    "images": {
+      "main": "/products/WHISKY GLASS/whisky glass 320ml.jpg",
+      "thumbnail": "/products/WHISKY GLASS/whisky glass 320ml.jpg",
+      "gallery": [
+        "/products/WHISKY GLASS/whisky glass 320ml.jpg",
+        "/products/WHISKY GLASS/whisky glass angle 1.jpg",
+        "/products/WHISKY GLASS/whisky glass banner.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 199,
+      "discount": 50,
+      "discountPercentage": 25,
+      "finalPrice": 149,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 200,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.3,
+      "count": 67
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": false
+    }
+  },
+  {
+    "id": "prod_004",
+    "name": "Dhoop Dani Brass",
+    "slug": "dhoop-dani-brass",
+    "category": "Spiritual & Cultural",
+    "subcategory": "Incense Holders",
+    "description": "Traditional brass dhoop dani for spiritual rituals",
+    "shortDescription": "Authentic brass dhoop dani",
+    "images": {
+      "main": "/products/DHOOP DANI/dhoop dani brown.jpg",
+      "thumbnail": "/products/DHOOP DANI/dhoop dani brown.jpg",
+      "gallery": [
+        "/products/DHOOP DANI/dhoop dani brown.jpg",
+        "/products/DHOOP DANI/dhoop dani brown angle 1.jpg",
+        "/products/DHOOP DANI/dhoop dani brown front angle.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 499,
+      "discount": 100,
+      "discountPercentage": 20,
+      "finalPrice": 399,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 60,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.8,
+      "count": 156
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": true,
+      "isNew": false
+    }
+  },
+  {
+    "id": "prod_005",
+    "name": "Waterproof Tote Bag",
+    "slug": "waterproof-tote-bag",
+    "category": "Bags & Accessories",
+    "subcategory": "Shopping Bags",
+    "description": "Large waterproof tote bag for daily use",
+    "shortDescription": "Durable waterproof tote bag",
+    "images": {
+      "main": "/products/WATERPROOF TOTE BAG/tote bag pink.jpg",
+      "thumbnail": "/products/WATERPROOF TOTE BAG/tote bag pink.jpg",
+      "gallery": [
+        "/products/WATERPROOF TOTE BAG/tote bag pink.jpg",
+        "/products/WATERPROOF TOTE BAG/tote bag yellow.jpg",
+        "/products/WATERPROOF TOTE BAG/tote bag orange banner.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 599,
+      "discount": 150,
+      "discountPercentage": 25,
+      "finalPrice": 449,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 45,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.4,
+      "count": 83
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": true
+    }
+  },
+  {
+    "id": "prod_006",
+    "name": "Gaming Mouse",
+    "slug": "gaming-mouse",
+    "category": "Tech & Electronics",
+    "subcategory": "Computer Accessories",
+    "description": "High precision gaming mouse with RGB lighting",
+    "shortDescription": "Professional gaming mouse",
+    "images": {
+      "main": "/products/GAMING MOUSE/GAMING MOUSE ANGLE 1.jpg",
+      "thumbnail": "/products/GAMING MOUSE/GAMING MOUSE ANGLE 1.jpg",
+      "gallery": [
+        "/products/GAMING MOUSE/GAMING MOUSE ANGLE 1.jpg",
+        "/products/GAMING MOUSE/Gaming mouse banner 2.jpg",
+        "/products/GAMING MOUSE/Gaming mouse feature banner.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 1299,
+      "discount": 300,
+      "discountPercentage": 23,
+      "finalPrice": 999,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 75,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.6,
+      "count": 214
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": true,
+      "isNew": true
+    }
+  },
+  {
+    "id": "prod_007",
+    "name": "Bamboo Dish Scrub",
+    "slug": "bamboo-dish-scrub",
+    "category": "Cleaning & Maintenance",
+    "subcategory": "Kitchen Cleaning",
+    "description": "Eco-friendly bamboo dish scrubber for kitchen cleaning",
+    "shortDescription": "Natural bamboo dish scrub",
+    "images": {
+      "main": "/products/BAMBOO DISH SCRUB/dish scrub.jpg",
+      "thumbnail": "/products/BAMBOO DISH SCRUB/dish scrub.jpg",
+      "gallery": [
+        "/products/BAMBOO DISH SCRUB/dish scrub.jpg",
+        "/products/BAMBOO DISH SCRUB/dish scrub banner 1.jpg",
+        "/products/BAMBOO DISH SCRUB/dish scrub banner 2.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 149,
+      "discount": 30,
+      "discountPercentage": 20,
+      "finalPrice": 119,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 120,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.2,
+      "count": 45
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": false
+    }
+  },
+  {
+    "id": "prod_008",
+    "name": "Stainless Steel Water Bottle",
+    "category": "Hydration",
+    "subcategory": "Water Bottles",
+    "description": "Premium stainless steel water bottle with insulation",
+    "shortDescription": "Insulated stainless steel bottle",
+    "images": {
+      "main": "/products/STAINLESS STEEL WATER BOTTLE/ferra brown water bottle.jpg",
+      "thumbnail": "/products/STAINLESS STEEL WATER BOTTLE/ferra brown water bottle.jpg",
+      "gallery": [
+        "/products/STAINLESS STEEL WATER BOTTLE/ferra brown water bottle.jpg",
+        "/products/STAINLESS STEEL WATER BOTTLE/blue glaze water bottle.jpg",
+        "/products/STAINLESS STEEL WATER BOTTLE/greyish pink water bottle.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 449,
+      "discount": 100,
+      "discountPercentage": 22,
+      "finalPrice": 349,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 90,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.5,
+      "count": 102
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": false
+    }
+  },
+  {
+    "id": "prod_009",
+    "name": "Premium Towel Set",
+    "slug": "premium-towel-set",
+    "category": "Bath & Bedding",
+    "subcategory": "Towels",
+    "description": "Soft and absorbent premium towel set",
+    "shortDescription": "Luxury cotton towel set",
+    "images": {
+      "main": "/products/TOWEL/pink towel.jpg",
+      "thumbnail": "/products/TOWEL/pink towel.jpg",
+      "gallery": [
+        "/products/TOWEL/pink towel.jpg",
+        "/products/TOWEL/grey towel.jpg",
+        "/products/TOWEL/dark blue towel.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 799,
+      "discount": 200,
+      "discountPercentage": 25,
+      "finalPrice": 599,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 65,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.6,
+      "count": 134
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": true,
+      "isNew": true
+    }
+  },
+  {
+    "id": "prod_010",
+    "name": "Insulated Tumbler",
+    "slug": "insulated-tumbler",
+    "category": "Hydration",
+    "subcategory": "Tumblers",
+    "description": "Vacuum insulated tumbler for hot and cold beverages",
+    "shortDescription": "20oz insulated tumbler",
+    "images": {
+      "main": "/products/TUMBLER/tumbler.jpg",
+      "thumbnail": "/products/TUMBLER/tumbler.jpg",
+      "gallery": [
+        "/products/TUMBLER/tumbler.jpg",
+        "/products/TUMBLER/tumbler angle 1.jpg",
+        "/products/TUMBLER/tumbler angle 2.jpg"
+      ]
+    },
+    "pricing": {
+      "basePrice": 399,
+      "discount": 80,
+      "discountPercentage": 20,
+      "finalPrice": 319,
+      "currency": "INR"
+    },
+    "inventory": {
+      "stock": 110,
+      "inStock": true
+    },
+    "reviews": {
+      "average": 4.4,
+      "count": 178
+    },
+    "metadata": {
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": true
+    }
+  }
+]

@@ -1,0 +1,83 @@
+/* Button Component Styles */
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  line-height: 1.5;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: #e34444;
+  color: #ffffff;
+  border-color: #e34444;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #a81919;
+  border-color: #a81919;
+  color: #ffffff;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: #e34444;
+  border-color: #e34444;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #e34444;
+  color: #ffffff;
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: #666666;
+  border-color: #eaeaea;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: #f5f5f5;
+  border-color: #cccccc;
+}
+
+/* Button Sizes */
+.btn-small {
+  padding: 7px 15px;
+  font-size: 12px;
+}
+
+.btn-medium {
+  padding: 11px 32px;
+  font-size: 14px;
+}
+
+.btn-large {
+  padding: 15px 40px;
+  font-size: 16px;
+}
+
+/* Full Width */
+.btn-full {
+  width: 100%;
+  display: block;
+}
+
+/* Disabled State */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Focus State */
+.btn:focus {
+  box-shadow: 0 0 0 3px rgba(227, 68, 68, 0.2);
+}
