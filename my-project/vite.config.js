@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    // Output to repository root so Vercel can find the `dist` directory
+    outDir: '../dist',
     // Production build optimizations
     minify: 'terser',
     terserOptions: {
