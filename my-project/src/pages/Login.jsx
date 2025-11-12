@@ -22,7 +22,7 @@ const Login = () => {
   // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/');
+      navigate('/home');
     }
   }, [isAuthenticated, navigate]);
 
@@ -93,7 +93,7 @@ const Login = () => {
         }
 
         if (result.success) {
-          navigate('/');
+          navigate('/home');
         } else {
           setApiError(result.message || 'Authentication failed. Please try again.');
         }

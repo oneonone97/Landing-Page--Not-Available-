@@ -105,7 +105,7 @@ const Header = () => {
           <div className="header-main-content">
             {/* Logo */}
             <div className="logo">
-              <Link to="/" className="logo-link">
+              <Link to={isAuthenticated ? "/home" : "/"} className="logo-link">
                 <img 
                   src="/images/logo.jpg" 
                   alt="Not Available Logo" 

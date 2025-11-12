@@ -44,26 +44,27 @@ const AppRoutes = () => {
       <Route 
         element={<MainLayout />}
       >
-        {/* Direct redirect to homepage */}
-        <Route path="/" element={<Home />} />
+        {/* Direct redirect to login page */}
+        <Route path="/" element={<Login />} />
+
+        {/* Public routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Policy Pages - Public Routes */}
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
 
-        {/* Public routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
-        {/* Protected routes */}
-        <Route 
+        {/* Protected routes - Homepage requires authentication */}
+        <Route
           element={
             <ProtectedRoute>
               <></>
             </ProtectedRoute>
           }
         >
+          <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/category/:slug" element={<Category />} />
           <Route path="/cart" element={<Cart />} />
@@ -91,7 +92,7 @@ const AppRoutes = () => {
         </Route>
       </Route>
 
-      {/* Redirect all unmatched routes to homepage */}
+      {/* Redirect all unmatched routes - login-first rule */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
