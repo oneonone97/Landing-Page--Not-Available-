@@ -7,15 +7,8 @@ export default defineConfig({
   build: {
     // Output to repository root so Vercel can find the `dist` directory
     outDir: '../dist',
-    // Production build optimizations
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        // Remove console statements in production
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    // Production build optimizations - use esbuild for faster builds
+    minify: 'esbuild',
     // Enable code splitting
     rollupOptions: {
       output: {

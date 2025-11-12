@@ -5,6 +5,10 @@ REM Install dependencies
 echo 📦 Installing dependencies...
 call npm install
 
+REM Install optional dependencies (terser for minification)
+echo 📦 Installing optional dependencies...
+call npm install terser --save-optional
+
 REM Build for production
 echo 🔨 Building for production...
 call npm run build

@@ -6,6 +6,10 @@ echo "🚀 Starting deployment process..."
 echo "📦 Installing dependencies..."
 npm install
 
+# Install optional dependencies (terser for minification)
+echo "📦 Installing optional dependencies..."
+npm install terser --save-optional
+
 # Build for production
 echo "🔨 Building for production..."
 npm run build
