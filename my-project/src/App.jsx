@@ -53,8 +53,8 @@ const AppRoutes = () => {
         <Route path="/refund-policy" element={<RefundPolicy />} />
 
         {/* Public routes */}
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Protected routes */}
         <Route 
@@ -76,7 +76,7 @@ const AppRoutes = () => {
         </Route>
 
         {/* Admin Routes */}
-        {/* <Route
+        <Route
           element={
             <AdminRoute>
               <AdminLayout />
@@ -88,7 +88,7 @@ const AppRoutes = () => {
           <Route path="/admin/products/new" element={<AdminProductForm />} />
           <Route path="/admin/products/:id/edit" element={<AdminProductForm />} />
           <Route path="/admin/inventory" element={<AdminInventory />} />
-        </Route> */}
+        </Route>
       </Route>
 
       {/* Redirect all unmatched routes to homepage */}

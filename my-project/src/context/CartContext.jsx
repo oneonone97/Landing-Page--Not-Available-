@@ -35,12 +35,16 @@ export const CartProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await cartService.getCart();
-      console.log('🛒 CartContext - Load Cart Response:', response);
+      if (import.meta.env.DEV) {
+        console.log('🛒 CartContext - Load Cart Response:', response);
+      }
       if (response.success) {
         // Backend returns cart in response.data, not response.cart
         const cartData = response.data || response.cart;
-        console.log('🛒 CartContext - Setting Cart:', cartData);
-        console.log('🛒 CartContext - Cart Items:', cartData?.items);
+        if (import.meta.env.DEV) {
+          console.log('🛒 CartContext - Setting Cart:', cartData);
+          console.log('🛒 CartContext - Cart Items:', cartData?.items);
+        }
         setCart(cartData);
       }
     } catch (error) {
@@ -54,16 +58,22 @@ export const CartProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await cartService.addToCart(productId, quantity);
-      console.log('🛒 CartContext - Add to Cart Response:', response);
+      if (import.meta.env.DEV) {
+        console.log('🛒 CartContext - Add to Cart Response:', response);
+      }
       if (response.success) {
         // Backend returns cart in response.data, not response.cart
         const cartData = response.data || response.cart;
-        console.log('🛒 CartContext - Setting Cart After Add:', cartData);
-        console.log('🛒 CartContext - Cart Items After Add:', cartData?.items);
-        
+        if (import.meta.env.DEV) {
+          console.log('🛒 CartContext - Setting Cart After Add:', cartData);
+          console.log('🛒 CartContext - Cart Items After Add:', cartData?.items);
+        }
+
         // If cart data doesn't have items or items are empty, reload the cart
         if (!cartData || !cartData.items || cartData.items.length === 0) {
-          console.log('🛒 CartContext - Cart data incomplete, reloading...');
+          if (import.meta.env.DEV) {
+            console.log('🛒 CartContext - Cart data incomplete, reloading...');
+          }
           await loadCart();
         } else {
           setCart(cartData);

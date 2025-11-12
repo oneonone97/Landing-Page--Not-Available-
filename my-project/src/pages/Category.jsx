@@ -68,7 +68,9 @@ const Category = () => {
           });
         }
       } catch (e) {
-        console.error('!!! DETAILED ERROR in Category.jsx !!!', e); // Detailed logging
+        if (import.meta.env.DEV) {
+          console.error('!!! DETAILED ERROR in Category.jsx !!!', e); // Detailed logging
+        }
         setError(e?.message || 'Failed to load category');
         const all = productsData.filter((p) => (p.category || '').toLowerCase() === categoryName.toLowerCase());
         const start = (page - 1) * 9;
@@ -89,7 +91,7 @@ const Category = () => {
   }, [categoryName, page]);
 
   if (loading) return <div className="container" style={{ padding: '24px' }}>Loading {categoryName}...</div>;
-  if (error) console.warn('Category load error:', error);
+  if (error && import.meta.env.DEV) console.warn('Category load error:', error);
 
   return (
     <div className="container" style={{ padding: '24px' }}>

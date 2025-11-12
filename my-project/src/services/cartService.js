@@ -30,12 +30,16 @@ class CartService {
   async addToCart(productId, quantity = 1) {
     try {
       await this.ensureCsrf();
-      console.log('Adding to cart:', { productId, quantity });
+      if (import.meta.env.DEV) {
+        console.log('Adding to cart:', { productId, quantity });
+      }
       const response = await api.post('/cart', {
         productId,
         quantity,
       });
-      console.log('Cart response:', response.data);
+      if (import.meta.env.DEV) {
+        console.log('Cart response:', response.data);
+      }
       return response.data;
     } catch (error) {
       console.error('Cart service error:', error);

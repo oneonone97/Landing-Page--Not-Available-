@@ -82,13 +82,18 @@ export const AuthProvider = ({ children }) => {
               localStorage.setItem('sessionId', data.data.sessionId);
             }
           } catch (e) {
-            console.warn('CSRF fetch skipped:', e?.message || e);
+            if (import.meta.env.DEV) {
+              console.warn('CSRF fetch skipped:', e?.message || e);
+            }
           }
         }
         return { success: true, user: response.user };
       }
       return { success: false, message: response.message };
     } catch (error) {
+      if (import.meta.env.DEV) {
+        console.error('Login failed:', error);
+      }
       return {
         success: false,
         message: error.message || 'Login failed. Please try again.'
@@ -117,7 +122,9 @@ export const AuthProvider = ({ children }) => {
     try {
       await authService.logout();
     } catch (error) {
-      console.error('Logout error:', error);
+      if (import.meta.env.DEV) {
+        console.error('Logout error:', error);
+      }
     } finally {
       setUser(null);
       setIsAuthenticated(false);

@@ -32,20 +32,30 @@ const Home = () => {
   const loadProducts = async () => {
     try {
       setLoading(true);
-      console.log('🔄 Attempting to load products from backend...');
+      if (import.meta.env.DEV) {
+        console.log('🔄 Attempting to load products from backend...');
+      }
       const response = await productService.getProducts({ limit: 20 });
-      console.log('📦 Backend response:', response);
+      if (import.meta.env.DEV) {
+        console.log('📦 Backend response:', response);
+      }
       if (response.success && response.products && response.products.length > 0) {
-        console.log('✅ Using backend data, products count:', response.products.length);
+        if (import.meta.env.DEV) {
+          console.log('✅ Using backend data, products count:', response.products.length);
+        }
         setProducts(response.products);
         setUseBackend(true);
       } else {
-        console.log('⚠️ Backend response empty, falling back to local data');
+        if (import.meta.env.DEV) {
+          console.log('⚠️ Backend response empty, falling back to local data');
+        }
         setProducts(productsData);
         setUseBackend(false);
       }
     } catch (err) {
-      console.log('❌ Backend not available, using local data:', err);
+      if (import.meta.env.DEV) {
+        console.log('❌ Backend not available, using local data:', err);
+      }
       setProducts(productsData);
       setUseBackend(false);
     } finally {
@@ -76,7 +86,9 @@ const Home = () => {
           [...currentProductIds].some(id => !newProductIds.has(id));
 
         if (hasChanged) {
-          console.log('🔄 Products updated, refreshing display...');
+          if (import.meta.env.DEV) {
+            console.log('🔄 Products updated, refreshing display...');
+          }
           setProducts(response.products);
           // Optionally show a subtle notification (non-intrusive)
           // toast.success('New products available!', { duration: 2000 });
@@ -84,7 +96,9 @@ const Home = () => {
       }
     } catch (err) {
       // Silently fail during auto-refresh to avoid disrupting user
-      console.log('Auto-refresh failed (non-critical):', err);
+      if (import.meta.env.DEV) {
+        console.log('Auto-refresh failed (non-critical):', err);
+      }
     } finally {
       setIsRefreshing(false);
     }

@@ -7,9 +7,11 @@ class ProductService {
       const response = await api.get('/products', { params });
       const body = response?.data || {};
       // Debug: inspect backend response shape and count
-      console.debug('[productService.getProducts] raw body:', body);
-      const count = Array.isArray(body?.data) ? body.data.length : 0;
-      console.debug('[productService.getProducts] products count:', count);
+      if (import.meta.env.DEV) {
+        console.debug('[productService.getProducts] raw body:', body);
+        const count = Array.isArray(body?.data) ? body.data.length : 0;
+        console.debug('[productService.getProducts] products count:', count);
+      }
       // Backend returns { success, data: products[], pagination }
       const toUiProduct = (p) => {
         if (!p || typeof p !== 'object') return p;
@@ -74,7 +76,9 @@ class ProductService {
         message: body?.message,
       };
     } catch (error) {
-      console.warn('[productService.getProducts] error:', error);
+      if (import.meta.env.DEV) {
+        console.warn('[productService.getProducts] error:', error);
+      }
       throw this.handleError(error);
     }
   }

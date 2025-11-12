@@ -58,7 +58,9 @@ const Shop = () => {
   if (loading) return <div className="container" style={{padding: '24px'}}>Loading products...</div>;
   if (error) {
     // Show fallback silently but keep a small note for devs
-    console.warn('Shop load error:', error);
+    if (import.meta.env.DEV) {
+      console.warn('Shop load error:', error);
+    }
   }
 
   return (

@@ -71,7 +71,9 @@ api.interceptors.response.use(
           return api(originalRequest);
         }
       } catch (csrfError) {
-        console.error('Failed to refresh CSRF token:', csrfError);
+        if (import.meta.env.DEV) {
+          console.error('Failed to refresh CSRF token:', csrfError);
+        }
         return Promise.reject(error);
       }
     }

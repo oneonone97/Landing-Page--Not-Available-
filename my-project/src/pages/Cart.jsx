@@ -11,11 +11,13 @@ const Cart = () => {
 
   useEffect(() => {
     // Debug: Log cart structure
-    console.log('🛒 Cart Page - Cart Data:', cart);
-    console.log('🛒 Cart Page - Cart Items:', cart?.items);
-    if (cart?.items && cart.items.length > 0) {
-      console.log('🛒 Cart Page - First Item:', cart.items[0]);
-      console.log('🛒 Cart Page - First Item Product:', cart.items[0]?.Product);
+    if (import.meta.env.DEV) {
+      console.log('🛒 Cart Page - Cart Data:', cart);
+      console.log('🛒 Cart Page - Cart Items:', cart?.items);
+      if (cart?.items && cart.items.length > 0) {
+        console.log('🛒 Cart Page - First Item:', cart.items[0]);
+        console.log('🛒 Cart Page - First Item Product:', cart.items[0]?.Product);
+      }
     }
     
     // Redirect to home if cart is empty after loading

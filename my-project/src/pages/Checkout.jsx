@@ -38,7 +38,9 @@ const Checkout = () => {
           ...addressData
         }));
         setHasSavedAddress(true);
-        console.log('✅ Loaded saved address from localStorage');
+        if (import.meta.env.DEV) {
+          console.log('✅ Loaded saved address from localStorage');
+        }
       } catch (error) {
         console.error('Error loading saved address:', error);
         localStorage.removeItem('checkout_address');
@@ -169,7 +171,9 @@ const Checkout = () => {
       // This allows user to return without filling address again if payment fails/cancelled
       try {
         localStorage.setItem('checkout_address', JSON.stringify(address));
-        console.log('💾 Saved address to localStorage for future use');
+        if (import.meta.env.DEV) {
+          console.log('💾 Saved address to localStorage for future use');
+        }
       } catch (error) {
         console.warn('Failed to save address to localStorage:', error);
         // Continue even if localStorage save fails
