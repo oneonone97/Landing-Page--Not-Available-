@@ -21,6 +21,7 @@
   "env": {
     "NODE_ENV": "production",
     "VITE_API_BASE_URL": "https://my-shop-backend-zeta.vercel.app/api",
-    "VITE_API_URL": "https://my-shop-backend-zeta.vercel.app/api"
+    "VITE_API_URL": "https://my-shop-backend-zeta.vercel.app/api",
+    "VITE_SENTRY_DSN": ""
   }
 }

@@ -3,8 +3,8 @@ import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 import './ErrorBoundary.css';
 
-// Initialize Sentry for error tracking
-if (import.meta.env.PROD && import.meta.env.VITE_SENTRY_DSN) {
+// Initialize Sentry for error tracking (only if DSN is properly configured)
+if (import.meta.env.PROD && import.meta.env.VITE_SENTRY_DSN && import.meta.env.VITE_SENTRY_DSN !== 'your_sentry_dsn_here') {
   Sentry.init({
     dsn: import.meta.env.VITE_SENTRY_DSN,
     integrations: [new BrowserTracing()],
