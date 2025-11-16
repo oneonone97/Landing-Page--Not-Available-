@@ -47,9 +47,40 @@ const Category = () => {
 
   useEffect(() => {
     const load = async (pageNum = 1) => {
+      // Only proceed if slug exists
+      if (!slug) {
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
-        const resp = await productService.getProducts({ limit: 9, page: pageNum, category: categoryName });
+        setError('');
+        
+        // ✅ FIX: Send slug to API (not display name)
+        // Backend expects slug (e.g., "bags") or ID, not display name (e.g., "Bags & Accessories")
+        if (import.meta.env.DEV) {
+          console.log('🔍 Category API Call:', {
+            slug: slug,
+            categoryName: categoryName,
+            sendingToAPI: slug, // ✅ Now sending slug instead of categoryName
+          });
+        }
+        
+        const resp = await productService.getProducts({ 
+          limit: 9, 
+          page: pageNum, 
+          category: slug // ✅ FIX: Use slug instead of categoryName
+        });
+        
+        if (import.meta.env.DEV) {
+          console.log('✅ API Response:', {
+            success: resp.success,
+            productsCount: resp.products?.length || 0,
+            pagination: resp.pagination,
+          });
+        }
+        
         if (resp.success && resp.products?.length) {
           setProducts(resp.products);
           setPagination(resp.pagination);
@@ -88,7 +119,7 @@ const Category = () => {
       }
     };
     load(page);
-  }, [categoryName, page]);
+  }, [slug, page, categoryName]); // ✅ Include slug in dependencies (categoryName kept for fallback filtering)
 
   if (loading) return <div className="container" style={{ padding: '24px' }}>Loading {categoryName}...</div>;
   if (error && import.meta.env.DEV) console.warn('Category load error:', error);
