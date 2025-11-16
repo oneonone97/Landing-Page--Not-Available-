@@ -3,6 +3,7 @@ import './ProductCard.css';
 import Button from './Button';
 import { useWishlist } from '../context/WishlistContext';
 import { useAuth } from '../context/AuthContext';
+import { normalizeImagePath } from '../utils/imageUtils';
 
 const ProductCard = ({ product, onAddToCart, onQuickView }) => {
   const { isAuthenticated } = useAuth();
@@ -103,11 +104,10 @@ const ProductCard = ({ product, onAddToCart, onQuickView }) => {
     touchStartY.current = null;
   };
 
-  // Ensure image URL has leading slash for proper rendering
-  const currentImageUrl = (() => {
-    const url = imageGallery[currentImageIndex] || '/placeholder.jpg';
-    return url.startsWith('/') ? url : `/${url}`;
-  })();
+  // Normalize image URL - preserves full URLs (Supabase), normalizes local paths
+  const currentImageUrl = normalizeImagePath(
+    imageGallery[currentImageIndex] || '/placeholder.jpg'
+  );
 
   return (
     <div className="product-card">

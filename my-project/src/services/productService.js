@@ -1,4 +1,5 @@
 import api from './api';
+import { normalizeImagePath, normalizeImageGallery } from '../utils/imageUtils';
 
 class ProductService {
   // Get all products with pagination and filters
@@ -28,21 +29,16 @@ class ProductService {
           category: p.category,
           description: p.description,
           images: {
-            // Ensure all image paths start with / for frontend
-            main: (() => {
-              const img = p.images?.main || p.image_gallery?.[0] || p.image_url || '/placeholder.jpg';
-              return img.startsWith('/') ? img : `/${img}`;
-            })(),
-            thumbnail: (() => {
-              const img = p.images?.thumbnail || p.image_gallery?.[0] || p.image_url || '/placeholder.jpg';
-              return img.startsWith('/') ? img : `/${img}`;
-            })(),
+            // Normalize image paths - preserves full URLs (Supabase), normalizes local paths
+            main: normalizeImagePath(
+              p.images?.main || p.image_gallery?.[0] || p.image_url || '/placeholder.jpg'
+            ),
+            thumbnail: normalizeImagePath(
+              p.images?.thumbnail || p.image_gallery?.[0] || p.image_url || '/placeholder.jpg'
+            ),
             gallery: (() => {
               const gallery = p.images?.gallery || p.image_gallery || (p.image_url ? [p.image_url] : ['/placeholder.jpg']);
-              // Ensure all gallery images have leading slash
-              return Array.isArray(gallery) 
-                ? gallery.map(img => img.startsWith('/') ? img : `/${img}`)
-                : ['/placeholder.jpg'];
+              return normalizeImageGallery(gallery);
             })()
           },
           pricing: {

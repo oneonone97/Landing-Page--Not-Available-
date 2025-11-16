@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import ProductCard from '../components/ProductCard';
 import Button from '../components/Button';
 import toast from 'react-hot-toast';
+import { normalizeImageGallery, normalizeImagePath } from '../utils/imageUtils';
 import './Wishlist.css';
 
 const Wishlist = () => {
@@ -61,10 +62,8 @@ const Wishlist = () => {
       imageGallery = [singleImage];
     }
     
-    // Ensure all image URLs have leading slash
-    const normalizedGallery = imageGallery.map(img => 
-      img.startsWith('/') ? img : `/${img}`
-    );
+    // Normalize image gallery - preserves full URLs (Supabase), normalizes local paths
+    const normalizedGallery = normalizeImageGallery(imageGallery);
     
     const mainImage = normalizedGallery[0] || '/placeholder.jpg';
     

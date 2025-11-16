@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { normalizeImagePath } from '../utils/imageUtils';
 import './ImageGallery.css';
 
 /**
@@ -64,11 +65,10 @@ const ImageGallery = ({ images = [], alt = 'Product image', className = '' }) =>
     touchStartY.current = null;
   };
 
-  // Ensure image URL has leading slash
-  const currentImageUrl = (() => {
-    const url = imageGallery[currentImageIndex] || '/placeholder.jpg';
-    return url.startsWith('/') ? url : `/${url}`;
-  })();
+  // Normalize image URL - preserves full URLs (Supabase), normalizes local paths
+  const currentImageUrl = normalizeImagePath(
+    imageGallery[currentImageIndex] || '/placeholder.jpg'
+  );
 
   return (
     <div 

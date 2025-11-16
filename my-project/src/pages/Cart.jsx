@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { getItemPriceInRupees } from '../utils/priceUtils';
+import { normalizeImageGallery } from '../utils/imageUtils';
 import ImageGallery from '../components/ImageGallery';
 import './Cart.css'; // We'll create this file for styling
 
@@ -67,10 +68,8 @@ const Cart = () => {
                                 product.images?.gallery || 
                                 (product.image_url ? [product.image_url] : ['/placeholder.jpg']);
             
-            // Ensure all image URLs have leading slash
-            const normalizedGallery = imageGallery.map(img => 
-              img.startsWith('/') ? img : `/${img}`
-            );
+            // Normalize image gallery - preserves full URLs (Supabase), normalizes local paths
+            const normalizedGallery = normalizeImageGallery(imageGallery);
             
             // Price from backend is in paise, convert to rupees for display
             const priceInRupees = getItemPriceInRupees(item);

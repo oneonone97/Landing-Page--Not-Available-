@@ -1,4 +1,5 @@
 import api from './api';
+import { normalizeImageGallery, normalizeImagePath } from '../utils/imageUtils';
 
 /**
  * Service for interacting with order API endpoints
@@ -83,10 +84,8 @@ class OrderService {
                         product.images?.gallery || 
                         (product.image_url ? [product.image_url] : ['/placeholder.jpg']);
       
-      // Ensure all image URLs have leading slash
-      const normalizedGallery = imageGallery.map(img => 
-        img.startsWith('/') ? img : `/${img}`
-      );
+      // Normalize image gallery - preserves full URLs (Supabase), normalizes local paths
+      const normalizedGallery = normalizeImageGallery(imageGallery);
       
       return {
         id: item.id,
@@ -105,8 +104,8 @@ class OrderService {
           ...product,
           image_gallery: normalizedGallery,
           images: {
-            main: normalizedGallery[0] || '/placeholder.jpg',
-            thumbnail: normalizedGallery[0] || '/placeholder.jpg',
+            main: normalizeImagePath(normalizedGallery[0] || '/placeholder.jpg'),
+            thumbnail: normalizeImagePath(normalizedGallery[0] || '/placeholder.jpg'),
             gallery: normalizedGallery
           }
         } : null

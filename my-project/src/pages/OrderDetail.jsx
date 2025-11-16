@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import orderService from '../services/orderService';
 import toast from 'react-hot-toast';
+import { normalizeImageGallery } from '../utils/imageUtils';
 import ImageGallery from '../components/ImageGallery';
 import './OrderDetail.css';
 
@@ -145,10 +146,8 @@ const OrderDetail = () => {
                                 product.images?.gallery || 
                                 (product.image_url ? [product.image_url] : ['/placeholder.jpg']);
               
-              // Ensure all image URLs have leading slash
-              const normalizedGallery = imageGallery.map(img => 
-                img.startsWith('/') ? img : `/${img}`
-              );
+              // Normalize image gallery - preserves full URLs (Supabase), normalizes local paths
+              const normalizedGallery = normalizeImageGallery(imageGallery);
               
               return (
                 <div key={index} className="order-item">
